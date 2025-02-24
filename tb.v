@@ -37,21 +37,31 @@ module counter_modern_tb;
         // #10;
         // rst = 2;
 
-        #200;
-        pause = 1;
+        // #200;
+        // pause = 1;
+        // #10;
+        // pause = 0;
+
+        // #200;
+        // pause = 1;
+        // #10; 
+        // pause = 0;
+
+        // #300;
+        // sel = 1;
+        // adj = 1;
+
+        // #200;
+
         #10;
-        pause = 0;
-
-        #200;
         pause = 1;
-        #10; 
+        #1;
         pause = 0;
 
-        #300;
-        sel = 1;
-        adj = 1;
-
-        #200;
+        #100;
+        pause = 1;
+        #1;
+        pause = 0;
 
 
 
