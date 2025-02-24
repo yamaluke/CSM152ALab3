@@ -107,6 +107,6 @@ module counter(
                 end
             end
         end 
-        clk1 = ~clk1;
+        clk1 <= ~clk1;
     end
 endmodule
