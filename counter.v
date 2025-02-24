@@ -51,14 +51,14 @@ module counter(
         begin
             if(pause)
             begin
-                paused = ~paused;
+                paused <= ~paused;
             end
         end
         else
         begin
             if(pause)
             begin
-                paused = ~paused;
+                paused <= ~paused;
             end
             else if(rst) 
             begin
@@ -119,7 +119,7 @@ module counter(
                     end
                 end
             end 
-            clk1 = ~clk1;
+            clk1 <= ~clk1;
         end
     end
 endmodule
