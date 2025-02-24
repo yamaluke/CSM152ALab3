@@ -1,54 +1,43 @@
 module debouncer(
-    input wire clk,    // Expected to be a stable clock (e.g., 500Hz)
-    input wire rstB,
-    input wire pauseB,
-    input wire selB,
-    input wire adjB,
+    input wire clkDis,    // Clock input
+    input wire rstB,   // Reset Button
+    input wire pauseB, // Pause Button
 
-    output reg rst,
-    output reg pause,
-    output reg sel,
-    output reg adj
+    output reg rst,    // Debounced Reset
+    output reg pause,  // Debounced Pause
 );
 
-    reg [4:0] stepRst;
-    reg [4:0] stepPause;
-    reg [4:0] stepSel;
-    reg [4:0] stepAdj;
+    reg [2:0] stepRst, stepPause;
+    reg clk_en_d;
 
-    reg prevRstB, prevPauseB, prevSelB, prevAdjB;
-
-    initial 
+    // Shift registers for debouncing
+    always @(posedge clkDis)
     begin
-        stepRst   <= 5'b00000;
-        stepPause <= 5'b00000;
-        stepSel   <= 5'b00000;
-        stepAdj   <= 5'b00000;
-
-        prevRstB  <= 0;
-        prevPauseB <= 0;
-        prevSelB   <= 0;
-        prevAdjB   <= 0;
+        if (rst) 
+        begin
+            stepRst   <= 3'b000;
+            stepPause <= 3'b000;
+        end
+        else 
+        begin
+            stepRst   <= {rstB, stepRst[2:1]};
+            stepPause <= {pauseB, stepPause[2:1]};
+        end
     end
 
-    always @(posedge clk) 
+    // Rising edge detection (Debounced)
+    always @(posedge clkDis)
     begin
-        // Shift registers to debounce inputs
-        stepRst   <= {stepRst[3:0], rstB};
-        stepPause <= {stepPause[3:0], pauseB};
-        stepSel   <= {stepSel[3:0], selB};
-        stepAdj   <= {stepAdj[3:0], adjB};
-
-        // Rising edge detection (debounced)
-        rst   <= (stepRst[4:1] == 4'b0000 && stepRst[0] == 1); // Transition from 0 -> 1
-        pause <= (stepPause[4:1] == 4'b0000 && stepPause[0] == 1);
-        sel   <= (stepSel[4:1] == 4'b0000 && stepSel[0] == 1);
-        adj   <= (stepAdj[4:1] == 4'b0000 && stepAdj[0] == 1);
-
-        // Store previous values
-        prevRstB  <= rstB;
-        prevPauseB <= pauseB;
-        prevSelB   <= selB;
-        prevAdjB   <= adjB;
+        if (rst) 
+        begin
+            rst   <= 1'b0;
+            pause <= 1'b0;
+        end 
+        else 
+        begin
+            rst   <= ~stepRst[0]   & stepRst[1];
+            pause <= ~stepPause[0] & stepPause[1];
+        end
     end
+
 endmodule
