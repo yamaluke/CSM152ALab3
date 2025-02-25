@@ -33,7 +33,7 @@ module counter(
     output reg [3:0] s1
     );
 
-    logic clk1 = 1;
+    reg clk1 = 1;
     
     initial 
     begin
