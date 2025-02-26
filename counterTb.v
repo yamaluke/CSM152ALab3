@@ -1,10 +1,13 @@
 module counter_modern_tb;
-    reg clk;
+    reg clkAdj;
     reg rst;
     reg pause;
     reg sel;
     reg adj;
     
+    // reg clkDis,    // Clock input
+    reg rstB;   // Reset Button
+    reg pauseB; // Pause Button
 
     wire [2:0] m10;
     wire [3:0] m1;
@@ -14,11 +17,14 @@ module counter_modern_tb;
     
 
     counter counter(
-        .clk(clk),
+        .clkAdj(clkAdj),
         .rst(rst),
         .pause(pause),
         .sel(sel),
         .adj(adj),
+        .clkDis(clkAdj),
+        .rstB(rstB),
+        .pauseB(pauseB),
         // .led(led),
         .m10(m10),
         .m1(m1),

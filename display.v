@@ -39,8 +39,10 @@ module display(
     reg minStop = 0;
 
     always @(posedge clkLED) begin
-        secStop = adj && sel && ~secStop;
-        minStop = adj && ~sel && ~minStop;
+        if (adj && sel)
+        secStop <= ~secStop;
+        if (adj && ~sel)
+            minStop <= ~minStop;
     end
 
     // Multiplexing 7-segment decoder

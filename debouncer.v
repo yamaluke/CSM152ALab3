@@ -4,7 +4,7 @@ module debouncer(
     input wire pauseB, // Pause Button
 
     output reg rst,    // Debounced Reset
-    output reg pause   // Debounced Pause
+    output reg pause,   // Debounced Pause
     output reg [2:0] m10,
     output reg [3:0] m1,
     output reg [2:0] s10,

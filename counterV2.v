@@ -1,31 +1,15 @@
-`timescale 10ns / 1ns
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 02/10/2025 10:44:15 AM
-// Design Name: 
-// Module Name: counter
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
-module counterV1(
-    input wire clk, //feed 2hz
+module counter(
+    //for counter
+    input wire clkAdj, //feed 2hz
     input wire rst,
     input wire pause,
     input wire sel,
     input wire adj,
+
+    // for debouncing
+    input wire clkDis,    // Clock input
+    input wire rstB,   // Reset Button
+    input wire pauseB, // Pause Button
 
     output reg [2:0] m10,
     output reg [3:0] m1,
@@ -34,6 +18,9 @@ module counterV1(
     );
 
     reg clk1 = 1;
+
+    reg [2:0] stepRst, stepPause;
+    reg pauseFlip;
     
     initial 
     begin
@@ -43,17 +30,17 @@ module counterV1(
         s1 <= 4'b0000;
     end
 
-    always @(posedge clk) 
+    always @(posedge clkAdj) 
     begin
         if(pause)
         begin
         end
         else if(rst) 
         begin
-            m10 <= 3'b000;
-            m1 <= 4'b0000;
-            s10 <= 3'b000;
-            s1 <= 4'b0000;
+            // m10 <= 3'b000;
+            // m1 <= 4'b0000;
+            // s10 <= 3'b000;
+            // s1 <= 4'b0000;
         end
         else if(adj)
         begin
@@ -109,4 +96,44 @@ module counterV1(
         end 
         clk1 <= ~clk1;
     end
+
+
+    always @(posedge clkDis)
+    begin
+        if (rst) 
+        begin
+            stepRst   <= 3'b000;
+            stepPause <= 3'b000;
+        end
+        else 
+        begin
+            stepRst   <= {rstB, stepRst[2:1]};
+            stepPause <= {pauseB, stepPause[2:1]};
+        end
+    end
+
+    // Rising edge detection (Debounced)
+    always @(posedge clkDis)
+    begin
+        if (rst) 
+        begin
+            rst   <= 1'b0;
+            pause <= 1'b0;
+            m10 <= 3'b000;
+            m1 <= 4'b0000;
+            s10 <= 3'b000;
+            s1 <= 4'b0000;
+        end 
+        else if (pauseFlip)
+        begin
+            pause <= ~pause;
+            pauseFlip <= 1'b0;
+        end
+        else 
+        begin
+            rst   <= ~stepRst[0]   & stepRst[1];
+            pauseFlip <= ~stepPause[0] & stepPause[1];
+        end
+    end
+
 endmodule
