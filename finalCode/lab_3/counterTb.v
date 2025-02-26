@@ -33,8 +33,8 @@ module counter_modern_tb;
     );
 
     initial begin
-        $monitor("Clock:%d Time: %d%d:%d%d", clk, m10, m1, s10, s1);
-        clk = 0;
+        $monitor("Clock:%d Time: %d%d:%d%d", clkAdj, m10, m1, s10, s1);
+        clkAdj = 0;
         // rst = 1;
         
 
@@ -75,6 +75,6 @@ module counter_modern_tb;
     end
 
     always begin
-        #1 clk = ~clk;
+        #1 clkAdj = ~clkAdj;
     end
 endmodule

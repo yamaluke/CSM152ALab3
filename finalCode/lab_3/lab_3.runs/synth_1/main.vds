@@ -1,0 +1,401 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Feb 25 18:48:54 2025
+# Process ID: 14300
+# Current directory: C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.runs/synth_1
+# Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.runs/synth_1/main.vds
+# Journal file: C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source main.tcl -notrace
+Command: synth_design -top main -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13732 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 434.520 ; gain = 95.082
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'main' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:24]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/clock_divider.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/clock_divider.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'clkTime' does not match port width (1) of module 'clock_divider' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:51]
+WARNING: [Synth 8-689] width (32) of port connection 'clkAdj' does not match port width (1) of module 'clock_divider' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:51]
+WARNING: [Synth 8-689] width (32) of port connection 'clkLED' does not match port width (1) of module 'clock_divider' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:51]
+WARNING: [Synth 8-689] width (32) of port connection 'clkDis' does not match port width (1) of module 'clock_divider' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:51]
+INFO: [Synth 8-6157] synthesizing module 'adjust_led' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/adjust_led.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'adjust_led' (2#1) [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/adjust_led.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'clkLED' does not match port width (1) of module 'adjust_led' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:53]
+INFO: [Synth 8-6157] synthesizing module 'counter' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/counter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (3#1) [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/counter.v:1]
+WARNING: [Synth 8-689] width (32) of port connection 'clkAdj' does not match port width (1) of module 'counter' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:54]
+WARNING: [Synth 8-689] width (32) of port connection 'clkDis' does not match port width (1) of module 'counter' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:54]
+INFO: [Synth 8-6157] synthesizing module 'display' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/display.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'display' (4#1) [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/display.v:1]
+WARNING: [Synth 8-689] width (32) of port connection 'clkDis' does not match port width (1) of module 'display' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:55]
+WARNING: [Synth 8-689] width (32) of port connection 'clkAdj' does not match port width (1) of module 'display' [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:55]
+WARNING: [Synth 8-3848] Net pauseLED in module/entity main does not have driver. [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:31]
+WARNING: [Synth 8-3848] Net rstLED in module/entity main does not have driver. [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:32]
+WARNING: [Synth 8-3848] Net rst in module/entity main does not have driver. [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'main' (5#1) [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:24]
+WARNING: [Synth 8-3331] design display has unconnected port clkAdj
+WARNING: [Synth 8-3331] design main has unconnected port pauseLED
+WARNING: [Synth 8-3331] design main has unconnected port rstLED
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 489.641 ; gain = 150.203
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin my_cd:rst to constant 0 [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/main.v:51]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 489.641 ; gain = 150.203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 489.641 ; gain = 150.203
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/constrs_1/imports/Src_lab1/Basys-3_lab1.xdc]
+WARNING: [Vivado 12-584] No ports matched 'RsRx'. [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/constrs_1/imports/Src_lab1/Basys-3_lab1.xdc:133]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/constrs_1/imports/Src_lab1/Basys-3_lab1.xdc:133]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RsTx'. [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/constrs_1/imports/Src_lab1/Basys-3_lab1.xdc:134]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/constrs_1/imports/Src_lab1/Basys-3_lab1.xdc:134]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/constrs_1/imports/Src_lab1/Basys-3_lab1.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/constrs_1/imports/Src_lab1/Basys-3_lab1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 823.488 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 823.488 ; gain = 484.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 823.488 ; gain = 484.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 823.488 ; gain = 484.051
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "countTime" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "countAdj" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "countLED" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "countDis" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkTime" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkTime" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkAdj" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkAdj" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkLED" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkLED" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkDis" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clkDis" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "m10" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "m1" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s10" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "blink_state" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 823.488 ; gain = 484.051
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	                9 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 8     
+	   7 Input      7 Bit        Muxes := 2     
+	   4 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 18    
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module clock_divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 4     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 8     
+Module adjust_led 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 4     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 9     
+	   3 Input      1 Bit        Muxes := 1     
+Module display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 8     
+	   7 Input      7 Bit        Muxes := 2     
+	   4 Input      7 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element my_cd/countTime_reg was removed.  [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/clock_divider.v:41]
+WARNING: [Synth 8-6014] Unused sequential element my_cd/clkTime_reg was removed.  [C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.srcs/sources_1/new/clock_divider.v:45]
+INFO: [Synth 8-5545] ROM "my_cd/countAdj" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "my_cd/clkAdj" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "my_cd/clkAdj" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "my_cd/countLED" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "my_cd/clkLED" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "my_cd/clkLED" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "my_cd/countDis" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "my_cd/clkDis" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "my_cd/clkDis" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "my_display/blink_state" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design main has unconnected port pauseLED
+WARNING: [Synth 8-3331] design main has unconnected port rstLED
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 823.488 ; gain = 484.051
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 823.488 ; gain = 484.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 836.605 ; gain = 497.168
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 837.930 ; gain = 498.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 837.930 ; gain = 498.492
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 837.930 ; gain = 498.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 837.930 ; gain = 498.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 837.930 ; gain = 498.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 837.930 ; gain = 498.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 837.930 ; gain = 498.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    24|
+|3     |LUT1   |     6|
+|4     |LUT2   |    14|
+|5     |LUT3   |     4|
+|6     |LUT4   |    38|
+|7     |LUT5   |    15|
+|8     |LUT6   |    42|
+|9     |FDRE   |   148|
+|10    |IBUF   |     5|
+|11    |OBUF   |    12|
+|12    |OBUFT  |     2|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------+--------------+------+
+|      |Instance        |Module        |Cells |
++------+----------------+--------------+------+
+|1     |top             |              |   312|
+|2     |  my_adjust_led |adjust_led    |     2|
+|3     |  my_cd         |clock_divider |   156|
+|4     |  my_counter    |counter       |    81|
+|5     |  my_display    |display       |    52|
++------+----------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 837.930 ; gain = 498.492
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 837.930 ; gain = 164.645
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 837.930 ; gain = 498.492
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+48 Infos, 22 Warnings, 2 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 837.930 ; gain = 510.289
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Student/Desktop/MW-LP/lab_3/lab_3.runs/synth_1/main.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 837.930 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 25 18:49:25 2025...

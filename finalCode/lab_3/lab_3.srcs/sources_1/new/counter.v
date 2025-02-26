@@ -1,7 +1,7 @@
 module counter(
     //for counter
     input wire clkAdj, //feed 2hz
-    // output reg rst,
+//    output reg rst,
     output reg pause,
     input wire sel,
     input wire adj,
@@ -19,9 +19,10 @@ module counter(
 
     reg clk1 = 1;
     reg rst = 0;
+    reg reset = 0;
 
     reg [2:0] stepRst, stepPause;
-    reg pauseFlip;
+    reg pauseFlip = 0;
     
     initial 
     begin
@@ -33,15 +34,16 @@ module counter(
 
     always @(posedge clkAdj) 
     begin
+//        reset <= 0;
         if(pause)
         begin
         end
-        else if(rst) 
+        else if(reset) 
         begin
-            // m10 <= 3'b000;
-            // m1 <= 4'b0000;
-            // s10 <= 3'b000;
-            // s1 <= 4'b0000;
+             m10 <= 3'b000;
+             m1 <= 4'b0000;
+             s10 <= 3'b000;
+             s1 <= 4'b0000;
         end
         else if(adj)
         begin
@@ -109,6 +111,7 @@ module counter(
         else 
         begin
             stepRst   <= {rstB, stepRst[2:1]};
+            reset <= rstB;
             stepPause <= {pauseB, stepPause[2:1]};
         end
     end
@@ -116,14 +119,15 @@ module counter(
     // Rising edge detection (Debounced)
     always @(posedge clkDis)
     begin
-        if (rst) 
+        if (rst == 1) 
         begin
             rst   <= 1'b0;
             pause <= 1'b0;
-            m10 <= 3'b000;
-            m1 <= 4'b0000;
-            s10 <= 3'b000;
-            s1 <= 4'b0000;
+            pauseFlip <= 0;
+//            m10 <= 3'b000;
+//            m1 <= 4'b0000;
+//            s10 <= 3'b000;
+//            s1 <= 4'b0000;
         end 
         else if (pauseFlip)
         begin
@@ -133,6 +137,7 @@ module counter(
         else 
         begin
             rst   <= ~stepRst[0]   & stepRst[1];
+//            rst <= 0;
             pauseFlip <= ~stepPause[0] & stepPause[1];
         end
     end
